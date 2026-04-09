@@ -6,13 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2402997A2EF4139400F97398 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 240299792EF4139400F97398 /* FirebaseCore */; };
+		2402997C2EF4139800F97398 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 2402997B2EF4139800F97398 /* FirebaseMessaging */; };
+		2402998B2EF444C600F97398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2402998A2EF444C600F97398 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		240299592EF411A300F97398 /* TiPorto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TiPorto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2402998A2EF444C600F97398 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2402997F2EF4146200F97398 /* Exceptions for "TiPorto" folder in "TiPorto" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 240299582EF411A300F97398 /* TiPorto */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2402995B2EF411A300F97398 /* TiPorto */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2402997F2EF4146200F97398 /* Exceptions for "TiPorto" folder in "TiPorto" target */,
+			);
 			path = TiPorto;
 			sourceTree = "<group>";
 		};
@@ -23,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2402997C2EF4139800F97398 /* FirebaseMessaging in Frameworks */,
+				2402997A2EF4139400F97398 /* FirebaseCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +54,9 @@
 		240299502EF411A300F97398 = {
 			isa = PBXGroup;
 			children = (
+				2402998A2EF444C600F97398 /* LaunchScreen.storyboard */,
 				2402995B2EF411A300F97398 /* TiPorto */,
+				240299782EF4139400F97398 /* Frameworks */,
 				2402995A2EF411A300F97398 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +67,13 @@
 				240299592EF411A300F97398 /* TiPorto.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		240299782EF4139400F97398 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,6 +96,8 @@
 			);
 			name = TiPorto;
 			packageProductDependencies = (
+				240299792EF4139400F97398 /* FirebaseCore */,
+				2402997B2EF4139800F97398 /* FirebaseMessaging */,
 			);
 			productName = TiPorto;
 			productReference = 240299592EF411A300F97398 /* TiPorto.app */;
@@ -94,6 +127,9 @@
 			);
 			mainGroup = 240299502EF411A300F97398;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				240299772EF4130D00F97398 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2402995A2EF411A300F97398 /* Products */;
 			projectDirPath = "";
@@ -109,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2402998B2EF444C600F97398 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,11 +288,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = TiPorto/TiPorto.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = USXD4Z3GU4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TiPorto/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -283,11 +324,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = TiPorto/TiPorto.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = USXD4Z3GU4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TiPorto/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -332,6 +377,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		240299772EF4130D00F97398 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		240299792EF4139400F97398 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 240299772EF4130D00F97398 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		2402997B2EF4139800F97398 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 240299772EF4130D00F97398 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 240299512EF411A300F97398 /* Project object */;
 }

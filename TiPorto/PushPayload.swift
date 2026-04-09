@@ -1,3 +1,11 @@
+//
+//  PushPayload.swift
+//  TiPorto
+//
+//  Created by Riccardo Valentini on 18.12.2025.
+//
+
+
 import Foundation
 
 struct PushPayload {
