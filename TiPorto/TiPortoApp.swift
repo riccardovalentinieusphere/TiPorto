@@ -13,9 +13,13 @@ struct TiPortoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            WebViewContainer()
-                .ignoresSafeArea(.container, edges: .all)
-                .ignoresSafeArea(.keyboard, edges: .bottom)
+            ZStack {
+                Color.white
+                    .ignoresSafeArea(.all)
+
+                WebViewContainer()
+            }
+            .ignoresSafeArea(.all)
                 .task {
                     UNUserNotificationCenter.current().setBadgeCount(0)
                 }

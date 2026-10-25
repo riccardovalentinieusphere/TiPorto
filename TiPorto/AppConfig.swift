@@ -9,21 +9,30 @@ enum AppConfig {
         #endif
     }()
 
-    static let homeURL = URL(
-        string: "https://int.tiporto.io/Transports/Home"
-    )!
+    private static let baseURL: URL = {
+        #if DEBUG
+        return URL(string: "https://beta.tiporto.io")!
+        #else
+        return URL(string: "https://app.tiporto.io")!
+        #endif
+    }()
 
-    static let logoutURL = URL(
-        string: "https://int.tiporto.io/logout"
-    )!
-
-    static let registerTokenURL = URL(
-        string: "https://int.tiporto.io/api/push/register-token"
-    )!
-
-    static let unbindTokenURL = URL(
-        string: "https://int.tiporto.io/api/push/unbind-token"
-    )!
+    static let homeURL = baseURL.appending(path: "Home")
+    static let logoutURL = baseURL.appending(path: "logout")
+    static let registerTokenURL = baseURL.appending(path: "api/push/register-token")
+    static let unbindTokenURL = baseURL.appending(path: "api/push/unbind-token")
 
     static let fcmHeaderName = "X-FCM-Token"
+
+    static func isTrustedURL(_ url: URL?) -> Bool {
+        guard let url else { return false }
+        return url.scheme?.lowercased() == "https"
+            && url.host?.lowercased() == homeURL.host
+            && url.user == nil && url.password == nil
+            && (url.port == nil || url.port == 443)
+    }
+
+    static func isReadOnlyMethod(_ method: String?) -> Bool {
+        ["GET", "HEAD", "OPTIONS"].contains((method ?? "GET").uppercased())
+    }
 }

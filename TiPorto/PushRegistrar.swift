@@ -46,8 +46,11 @@ final class PushRegistrar {
             return
         }
 
-        print("[PushRegistrar] TRY register | reason:", reason)
-        updateCookiesAndTryRegister(from: webView, token: token)
+        guard AppConfig.isTrustedURL(webView.url) else { return }
+        webView.evaluateJavaScript("navigator.onLine !== false && window.__TiPortoNativeNetworkOnline !== false && !document.documentElement.classList.contains('tp-offline')") { result, _ in
+            guard result as? Bool == true else { return }
+            self.updateCookiesAndTryRegister(from: webView, token: token)
+        }
     }
 
     // MARK: - Register internals
