@@ -36,6 +36,14 @@ final class WebViewController: UIViewController, WKNavigationDelegate, WKScriptM
         (function () {
           if (window.__iosNavHooked) return;
           window.__iosNavHooked = true;
+          const statusBarPatternStyle = document.createElement('style');
+          statusBarPatternStyle.textContent = `
+            .tp-mobile-shell::before {
+              inset-block-start: 0 !important;
+              height: calc(min(58vh, 520px) + var(--tp-shell-background-offset)) !important;
+            }
+          `;
+          document.head.appendChild(statusBarPatternStyle);
           const authenticationPaths = new Set(['/login', '/login/database', '/verifySMS']);
           let wasOnAuthenticationPage = authenticationPaths.has(location.pathname);
           function post(reason) {
@@ -90,6 +98,9 @@ final class WebViewController: UIViewController, WKNavigationDelegate, WKScriptM
         webView.scrollView.contentInsetAdjustmentBehavior = .never
         webView.scrollView.keyboardDismissMode = .none
         webView.scrollView.alwaysBounceVertical = true
+        if #available(iOS 26.0, *) {
+            webView.scrollView.topEdgeEffect.isHidden = true
+        }
 
         let root = UIView()
         root.backgroundColor = .white

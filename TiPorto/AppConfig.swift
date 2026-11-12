@@ -9,13 +9,9 @@ enum AppConfig {
         #endif
     }()
 
-    private static let baseURL: URL = {
-        #if DEBUG
-        return URL(string: "https://beta.tiporto.io")!
-        #else
-        return URL(string: "https://app.tiporto.io")!
-        #endif
-    }()
+    // Version 5 is the TestFlight beta and uses the beta web frontend.
+    private static let baseURL = URL(string: "https://beta.tiporto.io")!
+    static let environmentHost = baseURL.host!
 
     static let homeURL = baseURL.appending(path: "Home")
     static let logoutURL = baseURL.appending(path: "logout")

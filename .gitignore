@@ -1,0 +1,18 @@
+# Xcode build products and archives
+Builds/
+DerivedData/
+build/
+*.xcarchive
+*.ipa
+*.dSYM
+
+# Per-user Xcode state
+xcuserdata/
+*.xcuserstate
+
+# Signing material
+*.mobileprovision
+*.p12
+
+# macOS
+.DS_Store
